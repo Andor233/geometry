@@ -47,4 +47,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 COPY ./ros_entrypoint.sh /
 
-ENTRYPOINT ["/ros_entrypoint.sh"]
+RUN bash -c /ros_entrypoint.sh
