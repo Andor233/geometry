@@ -45,6 +45,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # [Optional] Uncomment this section to install additional packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
-COPY ./ros_entrypoint.sh /
 
 RUN source "/opt/ros/$ROS_DISTRO/setup.sh"
