@@ -2,15 +2,9 @@
 ARG VARIANT=buster
 FROM mcr.microsoft.com/vscode/devcontainers/cpp:dev-${VARIANT}
 
-
-RUN echo 'Etc/UTC' > /etc/timezone && \
-    ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
-    apt-get update && \
-    apt-get install -q -y --no-install-recommends tzdata && \
-    rm -rf /var/lib/apt/lists/*
-
 # install packages
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
+    tzdata \
     dirmngr \
     gnupg2 \
     && rm -rf /var/lib/apt/lists/*
