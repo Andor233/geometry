@@ -46,4 +46,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
-RUN source "/opt/ros/$ROS_DISTRO/setup.sh"
+RUN . /opt/ros/$ROS_DISTRO/setup.sh
