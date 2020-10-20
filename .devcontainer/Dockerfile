@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-ros-core=1.5.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install --no-install-recommends -y \
+RUN apt-get update && apt-get install --no-install-recommends -y \ 
     build-essential \
     python3-rosdep \
     python3-rosinstall \
@@ -46,5 +46,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
-RUN echo /opt/ros/$ROS_DISTRO/setup.sh>>/etc/bash.bashrc
+RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash">>/etc/bash.bashrc
 
